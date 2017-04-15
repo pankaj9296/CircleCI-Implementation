@@ -13,8 +13,5 @@ dependencies:
   post:
     - sudo cp ~/test/circle_build_virtual_host /etc/apache2/sites-available
     - sudo a2ensite circle_build_virtual_host
-    - sudo touch /etc/apache2/conf-available/fqdn.conf
-    - echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/fqdn.conf
-    - sudo a2enconf fqdn
     - sudo service apache2 restart
-
+    
