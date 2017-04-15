@@ -11,7 +11,7 @@ machine:
     GHOST_SUITE_ID: 58ec6458c0b8a24d292f0e74
 dependencies:
   post:
-    - sudo cp ~/innGrid/circle_build_virtual_host /etc/apache2/sites-available
+    - sudo cp ~/test/circle_build_virtual_host /etc/apache2/sites-available
     - sudo a2ensite circle_build_virtual_host
     - sudo touch /etc/apache2/conf-available/fqdn.conf
     - echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/fqdn.conf
