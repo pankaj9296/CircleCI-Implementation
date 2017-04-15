@@ -1,6 +1,6 @@
-Listen 80
+Listen 8080
 
-<VirtualHost *:80>
+<VirtualHost *:8080>
   DocumentRoot /home/ubuntu/test
   ServerName circlebuild.roomsy.com
   <FilesMatch \.php$>
