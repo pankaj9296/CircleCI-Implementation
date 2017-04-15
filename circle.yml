@@ -11,7 +11,8 @@ machine:
     GHOST_SUITE_ID: 58ec6458c0b8a24d292f0e74
 dependencies:
   post:
-    - sudo cp ~/test/circle_build_virtual_host /etc/apache2/sites-available
-    - sudo a2ensite circle_build_virtual_host
+    - sudo cp ~/test/circle_build_virtual_host.conf /etc/apache2/sites-available/circle_build_virtual_host.conf
+    - sudo a2ensite circle_build_virtual_host.conf
+    - sudo apt-get -y update && sudo apt-get install -y libapache2-mod-php5
     - sudo service apache2 restart
     
