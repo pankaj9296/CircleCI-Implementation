@@ -9,6 +9,8 @@ machine:
     NGROK_TOKEN: R5uVC1ye65hKoHHyZWLe_W6faFsUrkpKKuzWzQ1zj
     GHOST_API_KEY: fbef579153262df7ecf4bfaab92f87ad3d563265
     GHOST_SUITE_ID: 58ec6458c0b8a24d292f0e74
+  hosts:
+    circlebuild.roomsy.com: 127.0.0.1
 dependencies:
   post:
     - sudo cp ~/test/circle_build_virtual_host.conf /etc/apache2/sites-available/circle_build_virtual_host.conf
