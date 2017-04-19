@@ -6,6 +6,6 @@
 $process = curl_init("http://localhost:4040/api/tunnels"); 
 $return = curl_exec($process); 
 curl_close($process); 
-print_r($return);
-
+$return = json_decode($return);
+echo $public_url = $return[0]['public_url'];
 
