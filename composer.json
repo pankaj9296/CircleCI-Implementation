@@ -1,0 +1,7 @@
+{
+  "require": {
+    "omnipay/omnipay": "*",
+    "stripe/stripe-php": "2.*",
+    "loopline-systems/closeio-api-wrapper": "0.1.0"
+  }
+}
