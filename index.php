@@ -4,6 +4,7 @@
 //print_r($_ENV);
 
 $process = curl_init("http://localhost:4040/api/tunnels"); 
+curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
 $output = curl_exec($process); 
 curl_close($process); 
 //$return = json_decode($output);
