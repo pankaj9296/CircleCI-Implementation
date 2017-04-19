@@ -25,9 +25,9 @@ dependencies:
     - sudo a2enmod rewrite;
     - sudo sh -c "echo 'LoadModule php5_module /opt/circleci/php/$(phpenv global)/usr/lib/apache2/modules/libphp5.so' > /etc/apache2/mods-available/php5.load";
   post:
-    - sudo cp ~/innGrid/circle_build_virtual_host.conf /etc/apache2/sites-available/circle_build_virtual_host.conf
+    - sudo cp ~/test/circle_build_virtual_host.conf /etc/apache2/sites-available/circle_build_virtual_host.conf
     - sudo a2ensite circle_build_virtual_host.conf
-    - sudo cp ~/innGrid/fqdn.conf /etc/apache2/conf-available
+    - sudo cp ~/test/fqdn.conf /etc/apache2/conf-available
     - sudo a2enconf fqdn
     - sudo apt-get -y update && sudo apt-get install -y libapache2-mod-php5
     - sudo service apache2 restart
