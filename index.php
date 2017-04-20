@@ -11,3 +11,4 @@ echo "<br/><br/><br/><br/>";
 
 print_r($_SERVER);
 print_r($_ENV);
+echo getenv('DATABASE1_HOST');
