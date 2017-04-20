@@ -10,5 +10,11 @@ $ch = curl_init("http://localhost:4040/api/tunnels");
 echo "<br/><br/><br/><br/>";
 
 print_r($_SERVER);
+echo "<br/><br/><br/><br/>";
 print_r($_ENV);
-echo getenv('DATABASE1_HOST');
+echo "<br/><br/><br/><br/>";
+print_r($GLOBALS);
+echo "<br/><br/><br/><br/>";
+echo getenv('GHOST_API_KEY');
+echo "<br/><br/><br/><br/>";
+echo $GLOBALS["GHOST_API_KEY"];
