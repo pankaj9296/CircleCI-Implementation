@@ -18,7 +18,7 @@ machine:
 dependencies:
   pre:
     # Install php modules
-    - sudo source /home/ubuntu/.circlerc
+    - source /home/ubuntu/.circlerc
     - sudo a2enmod filter;
     - sudo a2enmod headers;
     - sudo a2enmod proxy;
