@@ -50,6 +50,11 @@ test:
     - curl "https://api.ghostinspector.com/v1/suites/$GHOST_SUITE_ID/execute/?apiKey=$GHOST_API_KEY&startUrl=$(curl 'http://localhost:4040/api/tunnels' | ./jq -r '.tunnels[1].public_url')" > ghostinspector.json
     # Exit with a fail status if any tests have failed
     - if [ $(grep -c '"passing":false' ghostinspector.json) -ne 0 ]; then exit 1; fi
+deployment:
+  production:
+    branch: master
+    commands:
+      - sudo sh circle_publish.sh production
 steps:
   add-ssh-keys:
     fingerprints:
