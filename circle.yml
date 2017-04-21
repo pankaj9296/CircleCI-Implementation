@@ -4,41 +4,14 @@ machine:
   environment: 
     ENVIRONMENT: development 
     CIRCLE_ENV: test
-    DATABASE1_HOST: 13.64.68.222
-    DATABASE1_NAME: inngrid
-    DATABASE1_USER: root
-    DATABASE1_PASS: 1moI8bOrsNnthz
-    NGROK_TOKEN: R5uVC1ye65hKoHHyZWLe_W6faFsUrkpKKuzWzQ1zj
-    GHOST_API_KEY: fbef579153262df7ecf4bfaab92f87ad3d563265
-    GHOST_SUITE_ID: 58ec6458c0b8a24d292f0e74
-    APACHE_RUN_USER: ubuntu
-    APACHE_RUN_GROUP: ubuntu
-  hosts:
-    circlebuild.roomsy.com: 127.0.0.1
-dependencies:
-  pre:
-    # Install php modules
-    - source /home/ubuntu/.circlerc
-    - sudo a2enmod filter;
-    - sudo a2enmod headers;
-    - sudo a2enmod proxy;
-    - sudo a2enmod proxy_http;
-    - sudo a2enmod rewrite;
-    - sudo sh -c "echo 'LoadModule php5_module /opt/circleci/php/$(phpenv global)/usr/lib/apache2/modules/libphp5.so' > /etc/apache2/mods-available/php5.load";
-  post:
-    - sudo cp ~/test/circle_build_virtual_host.conf /etc/apache2/sites-available/circle_build_virtual_host.conf
-    - sudo a2ensite circle_build_virtual_host.conf
-    - sudo cp ~/test/fqdn.conf /etc/apache2/conf-available
-    - sudo a2enconf fqdn
-    - sudo apt-get -y update && sudo apt-get install -y libapache2-mod-php5
-    - sudo service apache2 restart
-  override:
-    - composer install --no-interaction
 deployment:
   production:
     branch: master
     commands:
-      - sudo sh circle_publish.sh production
+      - sudo git status
+      - sudo git add .
+      - sudo git commit -m 'circleci'
+      - sudo git push origin
 steps:
   add-ssh-keys:
     fingerprints:
