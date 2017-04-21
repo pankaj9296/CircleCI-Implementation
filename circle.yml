@@ -17,4 +17,4 @@ deployment:
 steps:
   add-ssh-keys:
     fingerprints:
-      - "ab:fb:17:31:25:d9:84:2f:48:7b:10:7e:24:f4:6f:8c"
+      - "56:b4:f8:db:21:34:de:1d:d8:30:7c:e8:5a:b9:f1:6d"
