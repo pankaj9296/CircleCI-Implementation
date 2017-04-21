@@ -8,6 +8,8 @@ deployment:
   production:
     branch: master
     commands:
+      - sudo git config --global user.email "pankaj9296@gmail.com"
+      - sudo git config --global user.name "Pankaj Patidar"
       - sudo git status
       - sudo git add .
       - sudo git commit -m 'circleci'
